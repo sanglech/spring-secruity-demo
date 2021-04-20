@@ -23,6 +23,27 @@
 	
 	<hr>
 	
+
+	
+	<security:authorize access="hasRole('MANAGER')">
+		<!--  Add a link to point to the /leaders page -->
+	<p>
+		<a href="${pageContext.request.contextPath}/leaders">Leadearship Meeting</a>
+	</p>
+	</security:authorize>
+
+	
+	
+	<hr>
+	
+	
+	<security:authorize access="hasRole('ADMIN')">
+	<!--  Add a link to point to the /admin page -->
+	<p>
+		<a href="${pageContext.request.contextPath}/systems">Only for Admins</a>
+	</p>
+	</security:authorize>
+	
 	<!-- Add a logout button -->
 	<form:form action= "${pageContext.request.contextPath}/logout" 
 	method="POST">
